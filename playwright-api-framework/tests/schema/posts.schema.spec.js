@@ -14,7 +14,7 @@ function validatePostSchema(post) {
   expect(post.title.length).toBeGreaterThan(0);
   expect(post.body.length).toBeGreaterThan(0);
 }
-
+test.describe('Negative Tests @negative', () => {
 test('SCHEMA - GET single post has correct schema', async ({ request }) => {
   const api = new ApiHelper(request);
   const response = await api.get(ENDPOINTS.POST_BY_ID(1));
@@ -78,3 +78,4 @@ test('SCHEMA - POST response has correct schema', async ({ request }) => {
   expect(body.userId).toBe(TEST_DATA.newPost.userId);
 });
 
+});
