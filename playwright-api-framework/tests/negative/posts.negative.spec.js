@@ -3,6 +3,7 @@ import { ApiHelper } from '../../utils/apiHelper.js';
 import { ENDPOINTS } from '../../utils/endpoints.js';
 import { TEST_DATA } from '../../data/testData.js';
 
+test.describe('Negative Tests @negative', () => {
 test('GET - should return 404 for non-existent post', async ({ request }) => {
   const api = new ApiHelper(request);
   const response = await api.get(ENDPOINTS.POST_BY_ID(TEST_DATA.invalidId));
@@ -46,3 +47,4 @@ test('DELETE - should return 200 for non-existent post', async ({ request }) => 
   expect(response.status()).toBe(200);
 });
 
+});
